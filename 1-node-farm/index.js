@@ -34,10 +34,12 @@ const url = require('url');
 const server = http.createServer((req, res) => {
   const pathName = req.url;
   
-  if (pathName == '/' || pathName == '/overview') {
+  if (pathName === '/' || pathName === '/overview') {
     res.end('This is the OVERVIEW!');
-  } else if (pathName == '/product') {
+  } else if (pathName === '/product') {
     res.end('This is the PRODUCT!');
+  } else if (pathName === '/api') {
+    res.end('API');
   } else {
     res.writeHead(404, {
       'Content-type': 'text/html', 
