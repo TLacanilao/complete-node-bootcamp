@@ -39,6 +39,9 @@ const server = http.createServer((req, res) => {
   } else if (pathName === '/product') {
     res.end('This is the PRODUCT!');
   } else if (pathName === '/api') {
+
+    fs.readFile('./dev-data/data.json');
+
     res.end('API');
   } else {
     res.writeHead(404, {
